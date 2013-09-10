@@ -1,9 +1,10 @@
 <template name="todaysLunch">
   <div class="well">
+    <h2> Hey Joe, vai amloçar hoje? </h2>
     {{#if alreadyRequested}}
     <button id="cancel-request" class="btn btn-large btn-danger">Desisti</button>
     {{else}}
-    <button id="request" class="btn btn-large btn-success">Eu quero almoçar hoje</button>
+    <button id="request" class="btn btn-large btn-success">Quero almoçar</button>
     {{/if}}
     <select id="marmita" name="marmita">
       <option value="default">Padrão - R$ 3,00</option>
