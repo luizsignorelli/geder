@@ -1,0 +1,22 @@
+<template name="dashboard">
+  {{#each todaysLunchRequests}}
+    {{>lunchRequest}}
+  {{/each}}
+  <hr>
+  <div class="well">
+    Total: <strong>{{currency total}}</strong>  Total Pago: <strong>{{currency totalPayed}}</strong>
+  </div>
+</template>
+
+<template name="lunchRequest">
+  <div class="well">
+    <img src="{{user.avatar_url}}" class="img-rounded" style="width:25px" />
+    <span>{{user.name}} - {{currency value}}</span>
+    <form class="form-inline pay-form">
+      <input type="number" class="input-mini" value="{{ valuePayed }}" step="0.1"/>
+      <button class="btn"><i class="icon-ok"></i></button>
+    </form>
+    {{#if $gt valueToPay 0}}<span>Falta pagar: {{currency valueToPay}}</span>{{/if}}
+    {{#if $lt valueToPay 0}}<span>Tem que receber: {{currency valueToRecieve}}</span>{{/if}}
+  </div>
+</template>

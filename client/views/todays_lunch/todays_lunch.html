@@ -1,0 +1,16 @@
+<template name="todaysLunch">
+  <div class="well">
+    {{#if alreadyRequested}}
+    <button id="cancel-request" class="btn btn-large btn-danger">Desisti</button>
+    {{else}}
+    <button id="request" class="btn btn-large btn-success">Eu quero almoçar hoje</button>
+    {{/if}}
+    <select id="marmita" name="marmita">
+      <option value="default">Padrão - R$ 3,00</option>
+      <option value="small">Pequena - R$ 15,00</option>
+      <option value="medium">Média - R$ 21,00</option>
+      <option value="large">Grande - R$ 30,00</option>
+    </select>
+    <br><br>Confirmados até agora: <span class="badge badge-info">{{todaysRequests}}</span>
+  </div>
+</template>
