@@ -7,6 +7,8 @@ Meteor.methods({
 
   cancelTodaysRequest: function(){
     LunchRequests.remove( { 'user.email': Geder.currentUserEmail(), date: Geder.today() } );
+    console.log(Geder.currentUserEmail());
+    console.log(Geder.today());
   }
 
 });
