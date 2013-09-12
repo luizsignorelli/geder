@@ -5,14 +5,9 @@ Meteor.methods({
     LunchRequests.remove({})
   },
 
-  cancelTodaysRequest: function(){
-    lr = LunchRequests.findOne( { 'user.email': Geder.currentUserEmail(), date: Geder.today() } );
-    if (lr) {
-      LunchRequests.remove( lr._id );
-      console.log(lr._id);
-      console.log(lr.date);
-    }
-    return lr;
+  cancelTodaysRequest: function(id){
+    LunchRequests.remove( id );
+    return true;
   }
 
 });
