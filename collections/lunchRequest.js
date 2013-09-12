@@ -12,6 +12,7 @@ Meteor.methods({
       console.log(lr._id);
       console.log(lr.date);
     }
+    return lr;
   }
 
 });

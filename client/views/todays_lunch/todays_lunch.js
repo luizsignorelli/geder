@@ -22,6 +22,12 @@ Template.todaysLunch.events({
     LunchRequests.insert( { user: user, value: marmita.value, valuePayed: 0, date: Geder.today() });
   },
   'click #cancel-request' : function () {
-    Meteor.call('cancelTodaysRequest')
+    Meteor.call('cancelTodaysRequest', function(error, removed) {
+      if (error){
+        console.log("Erro");
+        console.log(error);
+      }
+      console.log(removed);
+    });
   }
 });
