@@ -6,9 +6,12 @@ Meteor.methods({
   },
 
   cancelTodaysRequest: function(){
-    LunchRequests.remove( { 'user.email': Geder.currentUserEmail(), date: Geder.today() } );
-    console.log(Geder.currentUserEmail());
-    console.log(Geder.today());
+    lr = LunchRequests.findOne( { 'user.email': Geder.currentUserEmail(), date: Geder.today() } );
+    if (lr) {
+      LunchRequests.remove( lr._id );
+      console.log(lr._id);
+      console.log(lr.date);
+    }
   }
 
 });
