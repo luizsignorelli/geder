@@ -8,6 +8,12 @@ Geder.currentUserEmail = function() {
   return Meteor.user().profile.email;
 }
 
+Geder.currentUserTodaysLunch = function(){
+  return { 'user.id': Meteor.user()._id,
+            date:     Geder.today()
+         };
+}
+
 Geder.marmitas = {
   default: { value: 3.00 },
   small: { value: 15.00 },
