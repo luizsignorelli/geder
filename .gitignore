@@ -1,1 +1,2 @@
-settings*
+settings-prod.json
+deploy.sh
