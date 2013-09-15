@@ -21,7 +21,9 @@
       <a class="brand" href="{{todaysLunchPath}}">Geder</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><a href="{{dashboardPath}}">Dashboard</a></li>
+           {{#if isInRole 'geder'}}
+            <li><a href="{{dashboardPath}}">Dashboard</a></li>
+           {{/if}}
         </ul>
         <ul class="nav pull-right">
           {{#if currentUser }}

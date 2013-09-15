@@ -2,6 +2,7 @@
   "packages": {
     "router": {},
     "momentjs": {},
-    "handlebar-helpers": {}
+    "handlebar-helpers": {},
+    "roles": {}
   }
 }
